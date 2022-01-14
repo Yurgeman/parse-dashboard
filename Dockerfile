@@ -11,7 +11,8 @@ WORKDIR /src
 COPY package*.json ./
 
 # Install without scripts otherwise webpack will fail
-RUN npm ci --production --ignore-scripts
+# RUN npm ci --production --ignore-scripts
+RUN npm ci --dev --ignore-scripts
 
 # Copy production node_modules aside for later
 RUN cp -R node_modules prod_node_modules
